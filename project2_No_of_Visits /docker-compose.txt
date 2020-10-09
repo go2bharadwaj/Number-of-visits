@@ -1,0 +1,21 @@
+version: '3' // version of docker compose
+
+// "Here is what I want you to do"
+// services means type of container
+services:
+  
+  redis-server:
+    //image to create this service (container)
+    image: 'redis'
+  
+  node-app:
+  
+    // . -> look in the current directory for the file
+    build: .
+
+    // ports
+    ports: 
+      // '-' in a yml file is how we specify an array
+      // used to map may ports 
+      // we use ports here just to open containers on our local machine
+      - "4001:8081"
